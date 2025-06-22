@@ -1,0 +1,9 @@
+.exercise-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.exercise-form input {
+  padding: 0.4rem;
+  flex: 1;
+}

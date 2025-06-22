@@ -1,0 +1,9 @@
+.workout-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.workout-item {
+  padding: 0.5rem;
+  border-bottom: 1px solid #ccc;
+}
