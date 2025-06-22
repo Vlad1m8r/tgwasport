@@ -1,45 +1,54 @@
 #root {
-  max-width: 1280px;
+  max-width: 480px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1rem;
   text-align: center;
+  font-family: sans-serif;
 }
 
-.logo {
-  height: 6em;
-  width: 6em; /* Добавлено для сохранения пропорций */
-  padding: 1.5em;
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
-  object-fit: cover; /* Масштабирование без искажений */
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  object-fit: cover;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.info {
+  text-align: left;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.name {
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
+.counter {
   color: #888;
+}
+
+.action {
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  padding: 0.6em 1.2em;
+  background-color: #1a1a1a;
+  color: #fff;
+  cursor: pointer;
+}
+
+.time,
+.weather {
+  font-size: 0.9rem;
 }
