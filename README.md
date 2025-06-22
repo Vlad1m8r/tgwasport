@@ -1,8 +1,16 @@
-# React + Vite
+# Telegram Web App Demo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Simple React application for Telegram Web Apps. When opened, it displays:
 
-Currently, two official plugins are available:
+- User avatar in a round frame.
+- The user name and how many times the button was pressed.
+- A button that increments the counter.
+- Current time and date.
+- Weather in the current location (powered by open-meteo).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Scripts
+
+```bash
+npm run dev       # start development server
+npm run build     # build for production
+```
