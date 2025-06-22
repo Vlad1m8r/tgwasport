@@ -1,56 +1,20 @@
-import { useState, useEffect } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import WorkoutsPage from './pages/WorkoutsPage';
+import WorkoutEditorPage from './pages/WorkoutEditorPage';
+import StatsPage from './pages/StatsPage';
 
-import WebApp from '@twa-dev/sdk';
+import './App.css';
 
-
-
-function App() {
-  const [count, setCount] = useState(0)
-
-  useEffect(() => {
-    WebApp.ready();
-    console.log(WebApp);
-
-    const handleClick = () => {
-      if (!WebApp.isPopupOpened) {
-        WebApp.showAlert("Вы нажали кнопку!");
-      }
-    };
-
-    // Работа с MainButton
-    WebApp.MainButton.setText("Нажми меня");
-    WebApp.MainButton.onClick(handleClick);
-    WebApp.MainButton.show();
-
-    // Работа с BackButton
-    WebApp.BackButton.onClick(() => WebApp.close());
-    WebApp.BackButton.show();
-
-    return () => {
-      WebApp.MainButton.offClick(handleClick);
-      WebApp.BackButton.offClick();
-    };
-  }, []);
-
-  var tg = WebApp.initDataUnsafe;
-
+export default function App() {
   return (
-    <>
-      <h1>{tg.user?.first_name}</h1>
-      <div className="card">
-        
-        <img src={tg.user?.photo_url} className="logo" alt="photo" />
-
-        <button onClick={() => setCount((count) => count + 1)}>
-          Нажал {count} раз
-        </button>
-
-      </div>
-    </>
-  )
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/workouts" element={<WorkoutsPage />} />
+        <Route path="/workout" element={<WorkoutEditorPage />} />
+        <Route path="/stats" element={<StatsPage />} />
+      </Routes>
+    </Router>
+  );
 }
-
-export default App
